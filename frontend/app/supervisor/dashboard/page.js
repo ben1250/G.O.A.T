@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import api from '@/lib/api';
 import { LayoutDashboard, QrCode, MapPin, Plus, FileText, Download } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
+import AttendanceAnalytics from '@/components/AttendanceAnalytics';
 
 export default function SupervisorDashboard() {
   const [cohorts, setCohorts] = useState([]);
@@ -95,6 +96,11 @@ export default function SupervisorDashboard() {
                 <p className="text-sm text-blue-600 break-all">{window.location.origin}/attendance/{activeForm._id}</p>
             </div>
         )}
+
+        <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-4">Performance Analytics</h3>
+            <AttendanceAnalytics />
+        </div>
 
         <div className="bg-white p-6 rounded shadow">
           <h3 className="text-xl font-semibold mb-4">Recent Submissions</h3>

@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import api from '@/lib/api';
 import { LayoutDashboard, Users, PlusCircle, Download, FileBarChart } from 'lucide-react';
+import AttendanceAnalytics from '@/components/AttendanceAnalytics';
 
 export default function DeptHeadDashboard() {
   const [cohorts, setCohorts] = useState([]);
@@ -85,6 +86,11 @@ export default function DeptHeadDashboard() {
                     <p className="mt-2 font-semibold">Participants: {participants.filter(p => p.cohort?._id === cohort._id).length}</p>
                 </div>
             ))}
+        </div>
+
+        <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-4">Department Analytics</h3>
+            <AttendanceAnalytics />
         </div>
 
         <div className="bg-white p-6 rounded shadow">
